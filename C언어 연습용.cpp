@@ -1,318 +1,280 @@
-﻿//1
+﻿//#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
-//
-//int main()
-//{
-//	int b = 100;
-//	int* pB = &b;
-//
-//	printf("b=%d\n", b);//100
-//	printf("b=%x\n", &b);//b의 주소 16진수로 출력
-//	printf("b=%x\n", pB);//b의 주소 16진수로 출력
-//}
-
-
-//2
-//#include <stdio.h>
-//
-//int main()
-//{
-//	char a = 'A';
-//	char* pA = &a;
-//
-//	int b = 100;
-//	int* pB = &b;
-//
-//	double c = 3.14;
-//	double* pC = &c;
-//
-//	printf("pA의 크기:%d byte\n", sizeof(pA));//포인터의 크기
-//	printf("pB의 크기:%d byte\n", sizeof(pB));
-//	printf("pC의 크기:%d byte\n", sizeof(pC));
-//
-//	printf("pA의 크기:%d byte\n", sizeof(*pA));//포인터가 가리키는 변수의 크기
-//	printf("pB의 크기:%d byte\n", sizeof(*pB));
-//	printf("pC의 크기:%d byte\n", sizeof(*pC));
-//}
-
-
-//3
-//#include <stdio.h>
-//
-//int main()
-//{
-//	char str[] = "programing";
-//	char* ptr1, * ptr2;
-//	ptr1 = &str[0];
-//	ptr2 = &str[7];
-//
-//	printf("두 포인터 간의 차는 %d입니다.\n", ptr2 - ptr1);
-//
-//	printf("%x\n", ptr1 + 1);
-//	printf("%c\n", *(ptr1 + 1));
-//
-//	printf("%x\n", *ptr1 + 1);
-//	printf("%c\n", *(ptr1 + 3));
-//}
-
-//4
-//#include <stdio.h>
-//int main()
-//
-//{
-//	int* numptr;
-//	int num1 = 10;
-//	int num2 = 20;
-//
-//	numptr = &num1;
-//	printf("%d\n", *numptr);
-//	numptr = &num2;
-//	printf("%d\n", *numptr);
-//}
-
-//5
-//#include <stdio.h>
-//int main()
-//{
-//	int number[2] = { 1,2 };
-//	int* p = number;
-//
-//	printf("%d\n", *p);
-//}
-
-
-//6
-//#include <stdio.h>
-//int main()
-//{
-//	int fibonacci[5] = { 3,5,8,13,21 };
-//	int* ptrFibo;
-//	ptrFibo = fibonacci;
-//
-//	int* ptrFibo1 = &fibonacci[1];//5
-//	int* ptrFibo4 = fibonacci + 4;//21
-//	printf(">%d-%d", *ptrFibo4, *ptrFibo1);
-//	printf(">>%d\n", *ptrFibo4 - *ptrFibo1);
-//
-//	printf("%d\n", ptrFibo[1]);
-//	printf("%d\n", ptrFibo[0]);
-//	printf("%d", ptrFibo[-1]);
-//
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int numArr[5] = { 11,22,33,44,55 };
-//	int* numptrA;
-//	int* ptr;
-//
-//	numptrA = &numArr[2];
-//	ptr = numArr;
-//
-//	printf("%d\n",*(numptrA-1) );//numptrA를 사용-->22출력
-//	printf("%d\n",*(ptr+4) );//ptr 사용-->55출력
-//}
-
-//포인터 ++활용
-//#include <stdio.h>
-//int main()
-//{
-//	int arr[5] = { 2,4,6,8,10 };
-//	int* p = &arr[0];
-//	for (int i = 0;i < 5;i++)
-//	{
-//		printf("%d", *p++);//<<<<<------------중요!!!!!!!!
-//	}
-//	return 0;
-//}
-
-//행렬 활용 예제(맛있음)
-//#include <stdio.h>
-//int main()
-//{
-//	int arr[2][3] = { {1,2,3},{4,5,6} };
-//	int* p = arr[0];
-//	for (int i = 0;i < 6;i++)
-//	{
-//		printf("%d", *p++); //arr[0][0] = 1, arr[0][1] = 2, arr[0][2] = 3, arr[1][0] = 4, arr[1][1] = 5, arr[1][2] = 6
-//		//행 우선 방식으로 저장됨(가로 줄 하나 끝나면 다음 가로 줄로 내려감)
-//	}
-//	return 0;
-//}
-
-//[포인터와 ++ 활용 예제(맛있음)
-//#include <stdio.h>
-//
-//int main() {
-//    int num[4] = { 1, 2, 3, 4 };  // 정수형 배열 선언 및 초기화
-//    int* pt = num;  // 배열 num의 첫 번째 요소(주소)를 가리키는 포인터 pt 선언
-//    pt++;           // 포인터를 한 칸 이동 (num[1]을 가리킴)
-//    *pt++ = 5;      // 현재 위치(num[1])에 5를 저장하고, 포인터를 한 칸 이동 (num[2]를 가리킴)
-//    *pt++ = 10;     // 현재 위치(num[2])에 10을 저장하고, 포인터를 한 칸 이동 (num[3]을 가리킴)
-//
-//    pt--;           // 포인터를 한 칸 뒤로 이동 (num[2]를 가리킴)
-//    *pt++ = 20;     // 현재 위치(num[2])에 20을 저장하고, 포인터를 한 칸 이동 (num[3]을 가리킴)
-//
-//    // 배열 출력
-//    for (int i = 0; i < 4; i++) {
-//        printf("%d\t", num[i]);
-//    }
-//    printf("\n");
-//
-//    return 0;
-//}
-
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	char str[] = "memmove can be very useful.....";
-//	memmove(str + 20, str + 15, 11);
-//	puts(str);
-//	return 0;
-//}
-
-//#include <string.h>
-//#include <stdio.h>
-//struct mydata
-//{
-//	int a;
-//	char b[25];
-//};
 //void main()
 //{
-//	char buf[5];
-//	memset(buf, '1', 5);
-//	printf("%s\n", buf);
+//	int a;
+//	float b;
+//	char ch;
+//	char s[20];
 //
-//	buf[4] = 0x00;
-//	printf("%s\n", buf);
+//	printf("정수를 입력: ");
+//	scanf("%d", &a);
+//	printf("실수를 입력: ");
+//	scanf("%f", &b);
+//	printf("문자를 입력: ");
+//	scanf(" %c", &ch);
+//	printf("문자열을 입력: ");
+//	scanf("%s", s);
+//	printf("\n정수의 10진수==>%d\n", a);
+//	printf("정수의 16진수==>%x\n", a);
+//	printf("정수의 8진수==>%o\n", a);
+//	printf("실수==>%10.3f\n", b);
+//	printf("실수(공학용)==>%e\n", b);
+//	printf("문자==>%c\n", ch);
+//	printf("문자열==>%s\n", s);
+//}
 //
-//	struct mydata data;
-//	memset((void*)&data, 0x00, sizeof(data));
-//	data.b[0] = 'k';
-//	printf("%d-%s\n", data.a, data.b);
+//
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//
+//void main()
+//{
+//	char s[20];
+//
+//	printf("문자열 입력:");
+//	gets_s(s);
+//
+//	puts(s);
 //}
 
+//#define _CRT_SECURE_NO_WARNINGS	
 //#include <stdio.h>
 //#include <string.h>
-//
-//int main()
+//#include <conio.h>
+// 
+//void main()
 //{
-//	char* str1 = (char*)"coding";
-//	char* str2 = (char*)"coding";
-//	char* str3 = (char*)"coding";
-//	char* str4 = (char*)"coding";
-//	char* str5 = (char*)"coding";
+//	char password[5] = "5678";
+//	char input[5];
+//	int i;
 //
-//	printf("%s with %s = %d\n", str1, str2,
-//		memcmp(str1, str2, strlen(str1)));
-//	printf("%s with %s(str1 size) = %d\n", str1, str3,
-//		memcmp(str1, str3, strlen(str1)));
-//	printf("%s with %s(str2 size)=%d\n", str1, str3,
-//		memcmp(str1, str3, strlen(str3)));
-//
-//	printf("%s with %s=%d\n", str1, str4,
-//		memcmp(str1, str4, strlen(str1)));
-//
-//	printf("%s with %s (str1 size)=%d\n", str1, str5,
-//		memcmp(str1, str5, strlen(str1)));
-//	printf("%s with %s (str5 size)=%d\n", str1, str5,
-//		memcmp(str1, str5, strlen(str5)));
-//	return 0;
-//}
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	int src_data[10] = { 0,1,2,3,4,5 };
-//	int dst_data[10] = { 10,20,30,40,50 };
-//	memcpy(dst_data, src_data, sizeof(int) * 4);
-//
-//	printf("%d %d %d %d %d\n", src_data[0], src_data[1], src_data[2],
-//		src_data[3], src_data[4]);
-//
-//	printf("%d %d %d %d %d\n", dst_data[0], dst_data[1], dst_data[2], 
-//		dst_data[3], dst_data[4]);
-//
-//}
-
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
-//#include <string.h>
-//
-//int main()
-//{
-//	char str[10];
-//
-//	scanf("%s", str);
-//	printf("입력한 문자열:%s\n", str);
-//	printf("문자열의 길이: %d\n", strlen(str));
-//}
-
-
-//#include <stdio.h>
-//#include <string.h>
-//
-//int main()
-//{
-//	char str[] = "This is a simple string";
-//	char* pch;
-//	printf("Looking for the 's' character in\"%s\"...\n", str);
-//	pch = strchr(str, 's');//문자 찾기 앞쪽
-//
-//	while (pch != NULL)
+//	printf("비밀번호 4글자를 입력하세요 : ");
+//	for (i = 0;i < 4;i++)
+//		input[i] = _getch();
+//	if (strncmp(password, input, 4) == 0)
 //	{
-//		printf("found at %d\n", pch - str + 1);
-//		pch = strchr(pch + 1, 's');
+//		printf("\n비밀번호 통과\n");
+//	}
+//	else
+//	{
+//		printf("\n입력한 비밀번호");
+//
+//		for (i = 0;i < 4;i++)
+//			_putch(input[i]);
+//
+//			printf("가 틀렸음");
+//
 //	}
 //}
 
-//#define _CRT_SECURE_NO_WARNINGS
+//
 //#include <stdio.h>
-//#include <string.h>
-//
-//int main()
+//#include <conio.h>
+//void main()
 //{
-//	char str[] = "This is a simple string";
-//	char* pch;
+//	char ch;
+//	ch = _getch();
+//	_putch(ch);
 //
-//	pch = strstr(str, "simple");
-//	strncpy(pch, "sample", 6);
+//	ch = _getch();
+//	_putch(ch);
 //
-//	printf("%s\n", str);
-//	return 0;
+//	ch = _getch();
+//	_putch(ch);
 //}
 
 //#include <stdio.h>
-//#include <string.h>	
+//#include <string.h>
+//#include <conio.h>
 //
-//int main()
+//void main()
 //{
-//	const char* str1 = "LPUX";
-//	const char* str2 = "HINUX";
-//	const char* str3 = "SOLARIS";
+//	char password[5] = "5678";
+//	char input[5];
+//	int i;
 //
-//	printf("s1[%-7s],s2[%-7s]=>ret=[%2d]\n", str1, str2, strcmp(str1, str2));
-//	printf("s2[%-7s],s3[%-7s]=>ret=[%2d]\n", str2, str3, strcmp(str2, str3));
-//	printf("s3[%-7s],s1[%-7s]=>ret=[%2d]\n", str3, str1, strcmp(str3, str1));
+//	printf("비밀번호 4글자를 입력하세요");
+//	for (i = 0;i < 4;i++)
+//	{
+//		input[i] = _getch();
+//	}
+//	if (strncmp(password, input, 4) == 0)
+//	{
+//		printf("\n비밀번호 통과\n");
+//	}
+//	else
+//	{
+//		printf("\n입력한 비밀번호\n");
+//		for (i = 0;i < 4;i++)
+//		{
+//			_putch(input[i]);
+//
+//			printf("가 틀렸음\n");
+//		}
+//	}
+//}
+
+//#include <stdio.h>
+//#include <conio.h>
+//
+//void main()
+//{
+//	char ch;
+//	ch = _getche();
+//
+//	ch = _getche();
+//
+//	ch = _getche();
+//}
+
+//
+//#include <stdio.h>
+//#include <conio.h>
+// 
+//void main()
+//{
+//	char ch;
+//
+//	printf("문자열을 입력하세요:");
+//	ch = getchar();
+//	putchar(ch);
+//
+//	ch = getchar();
+//	putchar(ch);
+//
+//	ch = getchar();
+//	putchar(ch);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main()
+//{
+//	char s[20];
+//	FILE* rfp;
+//
+//	rfp = fopen("c:\\temp\\data1.txt", "r");
+//
+//	fgets(s, 20, rfp);
+//
+//	printf("파일에서 읽은 문자열:");
+//	puts(s);
+//
+//	fclose(rfp);
+//}
+
+//
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//void main()
+//{
+//	char str[200];
+//	FILE* rfp;
+//
+//	rfp = fopen("c:\\windows\\win.inin", "r");
+//
+//	for (;;)
+//	{
+//		fgets(str, 200, rfp);
+//
+//		if (feof(rfp))
+//			break;
+//
+//		printf("%s", str);
+//	}
+//	fclose(rfp);
 //}
 
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
 //#include <string.h>
+//#include <stdlib.h>
 //
-//int main()
+//int upper_lower(char* p);
+//
+//void main()
 //{
-//	char buf[25];
+//	char in[100], out[100];
 //
-//	strcpy(buf, "hello world");
-//	printf("%s\n", buf);
-//	strncpy(buf, "hello world", 5);//앞 5글자만 복사-->'hello'만 출력됨
-//	buf[5] = '\0';
-//	printf("%s\n", buf);
+//	printf("문자열을 입력(100자 이내)");
+//	scanf("%s", in);
+//
+//
+//	strcpy(out, itoa(upper_lower(in)));
+//
+//	printf("대소문자 변환 결과==>%s\n", out);
 //}
+//
+//int upper_lower(char*p1)//?
+//{
+//    char str[100], result[100];
+//    int i;
+//    int dif = 'a' - 'A';
+//
+//    for (i = 0; str[i] != '\0'; i++)
+//    {
+//        
+//        if (str[i] >= 'a' && str[i] <= 'z') {
+//            result[i] = str[i] - dif;
+//        }
+//       
+//        else if (str[i] >= 'A' && str[i] <= 'Z') {
+//            result[i] = str[i] + dif;
+//        }
+//       
+//        else {
+//            result[i] = str[i];
+//        }
+//    }
+//    result[i] = '\0';
+//}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int throwDice();
+
+void main()
+{
+	short int diceNum[10] = { 0, };
+	int i;
+	char dup = 'N';
+
+	printf("**주사위 2개 던지기 시작**\n\n");
+	srand((unsigned)time(NULL));
+
+	int dice1, dice2;
+	int equalCount = 0;
+	while (1) {
+		dice1 = throwDice();
+		dice2 = throwDice();
+
+
+
+	}
+	printf("같은 숫자가 나온 순서==>");
+	for (i = 0;i < 10;i++)
+	{
+		printf("%d  ", diceNum[i]);
+	}
+
+	printf("\n\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
