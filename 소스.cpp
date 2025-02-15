@@ -1,112 +1,185 @@
-//#define _CRT_SECURE_NO_WARNIGNS	
+//#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
+//#include <string.h>
 //#include <stdlib.h>
+//
+// char* upper_lower(char*p)
+//{
+//	int i;
+//	int dif = 'a' - 'A';
+//	int count = strlen(p);
+//	char result[100];
+//
+//	for(i=0;i<count;i++)
+//	{
+//		if (*p >= 'A' && *p <= 'Z')
+//		{
+//			result[i] = *p + dif;
+//		}
+//
+//		if (*p >= 'a' && *p <= 'z')
+//		{
+//			result[i] = *p - dif;
+//		}
+//		p++;
+//	}
+//	result[count] = NULL;
+//	return result;
+//}
+//
+//void main()
+//{
+//	char in[100], out[100];
+//
+//	printf("문자열을 입력(100자 이내)");
+//	scanf("%s", in);
+//
+//	strcpy(out, upper_lower(in));
+//
+//	printf("대소문자 변환 결과==>%s\n", out);
+//}
+//
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
 //#include <string.h>
 //
-//int main()
+//void main()
 //{
-//	char string[] = "i like apple";
-//	char* p=string;
+//	char str[100];
+//	int i;
+//	int str_cnt ;
 //	
-//	p = strtok(string, " ");
-//	while (p)
+//
+//	printf("영문자 및 숫자를 입력(100자 이하)");
+//	scanf("%s", str);
+//
+//	printf("\n");
+//	printf("입력한 문자열 ==> %s\n", str);
+//	printf("변환된 문자열 ==> %s");
+//	str_cnt=strlen(str);
+//
+//	for (i =0; i <str_cnt; i++)
 //	{
-//		printf("%s\n", p);
-//		p = strtok(NULL, " ");
+//		if (str[i] >= '0' && str[i] <= '9')
+//			str[i] = '#';
+//
 //	}
-//	return 0;
+//	for (i = 0; i < str_cnt; i++)
+//	{
+//		str[i] = str[str_cnt - i];
+//	}
+//
+//	str[str_cnt - 1] = '\0';
+//	printf("%s", str);
 //}
 
 
 
-//문제 2
-//#define _CRT_SECURE_NO_WARNIGNS	
 //#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//
 //int main()
 //{
-//	char input[10];
-//	char* p = input;
-//	int data[10];
-//	int i=0;
-//	printf("입력하세요:");
-//	scanf("%s", input);
+//	int arr[5];
+//	scanf("%s", arr);
+//	printf("\n\n");
+//	printf("%s", arr);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int arr[10];
+//	int i,input;
 //
-//	p = strtok(input, "-");
-//	while (p)
+//	for (i = 0; i < 10; i++)
 //	{
-//		data[i++] = atoi(p);
-//		p = strtok(NULL, "-");
+//		scanf("%d", &arr[i]);
 //	}
-//	int result = data[0] - data[1];
-//	printf("%d", result);
+//
+//	scanf("%d", &input);
+//	
+//	for (i = 0; i < 10; i++)
+//		if (input == arr[i])
+//		{
+//			printf("exist");
+//			break;
+//		}
+//}
+
+//#include <stdio.h>//오름차순
+//
+//void main()
+//{
+//	int arr[4] = { 4,3,1,2 };
+//	int i,k,temp;           //2431-->1234
+//
+//    for (i = 0; i < 3; i++) //0 1 2
+//    {
+//        for (k = 0; k< 3 - i; k++) //0 1 2 // 0 1 // 0
+//        {
+//            if (arr[k] > arr[k + 1]) //3412 3142 3124// 1324 1234//
+//            {
+//                temp = arr[k];
+//                arr[k] = arr[k + 1];
+//                arr[k + 1] = temp;
+//            }
+//        }
+//    }
+//
+//	for (i = 0; i < 4; i++)
+//	{
+//		printf("%d", arr[i]);
+//	}
+//}
+
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//void main()
+//{
+//    int arr[4];
+//    int i, k, temp;           //2431-->1234
+//
+//    for (i = 0; i < 4; i++)
+//    {
+//        printf("배열의 %d번째 내용을 입력하세요", i + 1);
+//        scanf("%d", &arr[i]);
+//    }
+//       
+//
+//    for (i = 0; i < 3; i++) //0 1 2
+//    {
+//        for (k = 0; k< 3 - i; k++) //0 1 2 // 0 1 // 0
+//        {
+//            if (arr[k] > arr[k + 1]) //3412 3142 3124// 1324 1234//
+//            {
+//                temp = arr[k];
+//                arr[k] = arr[k + 1];
+//                arr[k + 1] = temp;
+//            }
+//        }
+//    }
+//
+//	for (i = 0; i < 4; i++)
+//	{
+//		printf("%d", arr[i]);
+//	}
 //}
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>	
-#include <string.h>
-int main()
+
+void main()
 {
-	char input[100];//5-3=2
-	int cal_num[2];
-	char* equal_left, * equal_right;
-	char* p;
-	int i=0;
-	int result=0;
-	
-	printf("계산할 식과 계산 값을 입력하세요");
-	scanf("%s", input);
+	int one = 1, two = 2;
+	int max = 0;
 
-	equal_left = strtok(input, "=");//포인터가 가리키는 위치는 0번째, =을 만나기 직전까지 저장
-	equal_right = strtok(NULL, "=");//포인터가 가리키는 위치는 =을 만난 직후,NULL을 만나기 직전까지 저장
-
-	char* plus = strchr(input, '+');
-	char* minus = strchr(input, '-');
-
-	if (minus!=NULL)
-	{
-		p = strtok(equal_left, "-");
-		while (p != NULL)
-		{
-			cal_num[i++] = atoi(p);//5,3,2
-			p = strtok(NULL, "-");
-		}
-		 result = cal_num[0] - cal_num[1];
-	}
-	if (plus != NULL)
-	{
-		p = strtok(equal_left, "+");
-		while (p != NULL)
-		{
-			cal_num[i++] = atoi(p);
-			p = strtok(NULL, "+");
-		}
-		result = cal_num[0] + cal_num[1];
-	}
-
-	if (result == atoi(equal_right))
-		printf("참입니다.");
-	else if (result != atoi(equal_right))
-		printf("%s는 %d입니다.", input, result);
+	if (one > two)
+		max = one;
 	else
-		printf("숫자를 입력하세요");
+		max = two;
+	printf("max=%d\n", max);
 }
-
-
-
-
-
-
-
-//
-//#include <stdio.h>
-//void main()
-//{
-//	char inStr[100], outStr[100];
-//
-//	printf("문자열을 입력(100자 이내)");
-//
-//}
