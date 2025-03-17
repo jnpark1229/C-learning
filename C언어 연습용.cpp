@@ -230,51 +230,297 @@
 //    result[i] = '\0';
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//
+//int throwDice();
+//
+//void main()
+//{
+//	short int diceNum[10] = { 0, };
+//	int i;
+//	char dup = 'N';
+//
+//	printf("**주사위 2개 던지기 시작**\n\n");
+//	srand((unsigned)time(NULL));
+//
+//	int dice1, dice2;
+//	int equalCount = 0;
+//	while (1) {
+//		dice1 = throwDice();
+//		dice2 = throwDice();
+//
+//
+//
+//	}
+//	printf("같은 숫자가 나온 순서==>");
+//	for (i = 0;i < 10;i++)
+//	{
+//		printf("%d  ", diceNum[i]);
+//	}
+//
+//	printf("\n\n");
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//void main()
+//{
+//	char s[20];
+//	FILE* rfp;
+//
+//	rfp = fopen("C:\\Temp\\data1.txt", "r");
+//
+//	fgets(s, 20, rfp);
+//
+//	printf("파일에서 읽은 문자열: ");
+//	puts(s);
+//
+//	fclose(rfp);
+//}
+//
+//#define _crt_secure_no_warnings	
+//#include <stdio.h>
+//
+//int main()
+//{
+//	char str[200];
+//	FILE* rfp;
+//
+//	rfp = fopen("C:\\windows\\win.ini", "r");
+//
+//	for (;;)
+//	{
+//		fgets(str, 200, rfp);
+//
+//		if (feof(rfp))
+//			break;
+//
+//		printf("%s", str);
+//	}
+//
+//	fclose(rfp);
+//
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main()
+//{
+//	FILE* rfp;
+//	float sum = 0;
+//	float in;
+//	int i;
+//
+//	rfp = fopen("C:\\Temp\\data3.txt", "r");
+//
+//	for (i = 0;i < 5;i++)
+//	{
+//		fscanf(rfp, "%f", &in);
+//		sum = sum + in;
+//	}
+//	printf("합계==>%7.2f\n", sum);
+//
+//	fclose(rfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//
+//int main()
+//{
+//	char s[20];
+//	FILE* wfp;
+//
+//	wfp = fopen("C:\\Temp\\data4.txt", "w");
+//
+//	printf("문자열을 입력(최대 19자)");
+//	gets_s(s);
+//
+//	fputs(s, wfp);
+//
+//	fclose(wfp);
+//}
+
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//
+//int main()
+//{
+//	char str[200];
+//	FILE* rfp;
+//	FILE* wfp;
+//
+//	rfp = fopen("C:\\windows\\win.ini", "r");
+//	wfp = fopen("C:\\Temp\\data5.txt", "w");
+//
+//	for (;;)
+//	{
+//		fgets(str, 200, rfp);
+//
+//		if (feof(rfp))
+//			break;
+//		fputs(str, wfp);
+//	}
+//	fclose(rfp);
+//	fclose(wfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//
+//int main()
+//{
+//	FILE* wfp;
+//	int sum = 0;
+//	int in, i;
+//	wfp = fopen("C:\\Temp\\data7.txt", "w");
+//
+//	for (i = 0;i < 5;i++)
+//	{
+//		printf("숫자 %d: ", i + 1);
+//		scanf("%d", &in);
+//		sum = sum + in;
+//	}
+//	fprintf(wfp, "합계==>:%d\n", sum);
+//
+//	fclose(wfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//
+//int main()
+//{
+//	FILE* wfp;
+//	int i, k;
+//
+//	wfp = fopen("C:\\Temp\\gugu.txt", "w");
+//	for (i = 2;i < 10;i++)
+//	{
+//		fprintf(wfp, "제 #%d단#", i);
+//	}
+//	fprintf(wfp, "\n\n");
+//
+//	for (i = 1;i < 10;i++)
+//	{
+//		for (k = 2;k < 10;k++)
+//		{
+//			fprintf(wfp, "%2d * %d =%2d   ", k, i, k * i);
+//		}
+//		fprintf(wfp, "\n");
+//	}
+//	fclose(wfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS	
+//#include <stdio.h>
+//#include <string.h>
+//
+//int main()
+//{
+//	FILE* rfp, * wfp;
+//	char str1[200], str2[200];
+//	int size, i;
+//
+//	rfp = fopen("C:\\Temp\\in.txt", "r");
+//	wfp = fopen("C:\\Temp\\out.txt", "w");
+//
+//	for (;;)
+//	{
+//		fgets(str1, 200, rfp);
+//
+//		if (feof(rfp))
+//			break;
+//
+//		size = strlen(str1);//4 완보민재
+//		for (i = size - 1;i >= 0;i--)//3~0
+//			str2[size - (i + 1)] = str1[i - 1];
+//
+//		str2[size - 1] = '\0';
+//		fputs(str2, wfp);
+//		fputs("\n", wfp);
+//	}
+//	fclose(rfp);
+//	fclose(wfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main()
+//{
+//	char str[200];
+//	FILE* rfp;
+//	rfp = fopen("C:\\windows\\win.ini", "r");
+//	int line = 1;
+//	while (1)
+//	{
+//		fgets(str, 200, rfp);
+//
+//		if (feof(rfp))
+//			break;
+//
+//		printf("%d : %s",line, str);
+//		line++;
+//	}
+//	fclose(rfp);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main()
+//{
+//	int input[10];
+//	int i;
+//	int sum = 0;
+//	int* p;
+//
+//	for (i = 0;i < 3;i++)
+//	{
+//		printf("%d번째 숫자: ", i + 1);
+//		scanf("%d", &input[i]);
+//	}
+//
+//	p = input;
+//	
+//
+//	for (i = 0;i < 3;i++)
+//	{
+//		sum = sum + *(p + i);
+//	}
+//	printf("입력한 숫자의 합=>%d", sum);
+//}
+
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int throwDice();
-
-void main()
+#include <malloc.h>
+int main()
 {
-	short int diceNum[10] = { 0, };
-	int i;
-	char dup = 'N';
+	int* p;
+	int i, hap = 0;
+	int cnt;
 
-	printf("**주사위 2개 던지기 시작**\n\n");
-	srand((unsigned)time(NULL));
+	printf("입력할 개수는? : ");
+	scanf("%d", &cnt);
 
-	int dice1, dice2;
-	int equalCount = 0;
-	while (1) {
-		dice1 = throwDice();
-		dice2 = throwDice();
-
-
-
-	}
-	printf("같은 숫자가 나온 순서==>");
-	for (i = 0;i < 10;i++)
+	p = (int*)malloc(sizeof(int) * cnt);
+	
+	for (i = 0;i < cnt;i++)
 	{
-		printf("%d  ", diceNum[i]);
+		printf("%d번째 숫자 : ", i + 1);
+		scanf("%d", &p[i]);
 	}
 
-	printf("\n\n");
+	for (i = 0;i < cnt;i++)
+	{
+		hap = hap + *(p + i);
+	}
+
+	printf("입력할 숫자의 합==>%d", hap);
+
+	free(p);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
