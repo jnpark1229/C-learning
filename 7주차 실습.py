@@ -1,22 +1,22 @@
 # #실습 1
-# import random
-# names_string = input("각 이름은 콤마(,)와 빈칸으로 구분하여 참여자들의 이름을 모두 제시하시오: \n")
-# names = names_string.split(",") 
-# print(names)
+import random
+names_string = input("각 이름은 콤마(,)와 빈칸으로 구분하여 참여자들의 이름을 모두 제시하시오: \n")
+names = names_string.split(",") #************
+print(names)
 
-# computer=random.randint(0,len(names)-1)
-# print(f'{names[computer]}이(가) 쏜다!')
+computer=random.randint(0,len(names)-1)
+print(f'{names[computer]}이(가) 쏜다!')
 
 # #실습 2
-# num = [[11, 12, 13], [21, 22, 23], [31, 32, 33, 34], [41, 42]]
-# sum1=sum(num[0])
-# sum2=sum(num[1])
-# sum3=sum(num[2])
-# sum4=sum(num[3])
-# print(f'1행의 합 {sum1}')
-# print(f'2행의 합 {sum2}')
-# print(f'3행의 합 {sum3}')
-# print(f'4행의 합 {sum4}')
+num = [[11, 12, 13], [21, 22, 23], [31, 32, 33, 34], [41, 42]]
+sum1=sum(num[0])
+sum2=sum(num[1])
+sum3=sum(num[2])
+sum4=sum(num[3])
+print(f'1행의 합 {sum1}')
+print(f'2행의 합 {sum2}')
+print(f'3행의 합 {sum3}')
+print(f'4행의 합 {sum4}')
 
 # # hap=[]
 # # for i in range(len(num)-1):
