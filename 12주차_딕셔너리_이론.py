@@ -5,7 +5,7 @@ print(dict)
 print(dict.keys())
 print(dict.values())
 print(dict["강아지"]) #key값에 해당하는 value값 얻기
-print(f'딕셔너리 크기 = {len(dict)}') #item 개수수
+print(f'딕셔너리 크기 = {len(dict)}') #item 개수
 print()
 
 persons = {"name":"홍길동","age":18, "is_student":False}

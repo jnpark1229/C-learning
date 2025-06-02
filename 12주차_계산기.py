@@ -44,6 +44,7 @@ num2 = float(input("What's the next number?: "))
 
 # 연산 딕셔너리를 사용하여, 해당하는 함수를 호출하고 반환 값을 'answer'에 저장하세요.
 answer = operations[operation_symbol](num1, num2)
+#dic['key'] == value(함수 형태)--> value(매개변수)
 
 
 # 결과출력. print result

@@ -1,15 +1,15 @@
 # Write your code below this line 👇
-# def prime_checker(n):
-#     if n == 1:
-#             print(f'1은 소수가 아닙니다.')
+def prime_checker(n):
+    if n == 1:
+            print(f'1은 소수가 아닙니다.')
 
-#     for i in range(2,n):
-#         if n % i == 0:
-#             print(f'{n}은(는) 소수가 아닙니다.')
-#             break
+    for i in range(2,n):
+        if n % i == 0:
+            print(f'{n}은(는) 소수가 아닙니다.')
+            break
 
-#     else:
-#         print(f'{n}은(는) 소수입니다.')
+    else:
+        print(f'{n}은(는) 소수입니다.')
 
 
 def prime_checker(n):
